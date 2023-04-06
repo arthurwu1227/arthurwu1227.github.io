@@ -1,0 +1,4 @@
+baseURL = 'arthurwu1227.github.io'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'LoveIt'
