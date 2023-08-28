@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 	<meta charset="UTF-8">
 	<title>Arthur Wu</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
@@ -29,31 +31,46 @@
 			font-weight: 400;
 			margin-bottom: 1em;
 		}
+		canvas {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1; /* Above the default background, but below the content */
+		}
+		.content {
+			position: relative;
+			z-index: 2; /* Above the Three.js canvas */
+		}
 		a {
-			color: #333;
-			font-size: 1.2em;
-			text-decoration: none;
-			margin: 0.5em 0;
-			padding: 0.5em 1em;
-			border-radius: 3em;
-			border: 2px solid #333;
-			transition: all 0.3s ease-in-out;
-			font-weight: 700;
-			text-decoration: underline;
-		}
-		a:hover {
-			background-color: #333;
-			color: #e0f7fa;
-		}
+    color: #333;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin: 1em;  /* Increased margin for separation */
+    padding: 0.5em 1em;
+    border-radius: 3em;
+    border: 2px solid #333;
+    transition: all 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* initial box-shadow for a raised button effect */
+    display: inline-block;  /* Allows transform to work as expected */
+}
+
+a:hover {
+    background-color: #333;
+    color: #e0f7fa;
+    transform: scale(1.5); /* enlarge the button slightly */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* enhance box-shadow for a more pronounced raised effect */
+}
+
 		.projects-link {
 			color: #333;
-			font-weight: 700;
+			font-weight: 400;
 			margin-top: 1em;
 			font-size: 1.2em;
 		}
 	</style>
 </head>
 <body>
+	<div class="content">
 	<p class="title">Arthur Wu</p>
 	<br>
 	<p class="subtitle">Computer Science + Data Analytics + Finance @ the University of Virginia</p>
@@ -61,6 +78,62 @@
 	<br>
 	<a href="https://www.linkedin.com/in/arthur-wu-kn/">LinkedIn</a>
 	<a href="https://github.com/arthurwu1227">Github</a>
-	<a href="projects.html" class="projects-link">View my portfolio of personal projects</a>
+	<a href="projects.html" class="projects-link">Portfolio</a>
+</div>
+	<script>
+    let scene, camera, renderer;
+    const cubes = [];
+
+    function init() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // alpha for transparent background
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        for (let i = 0; i < 10; i++) {  // Generate fewer cubes, for example, 10
+    const size = 5 + Math.random() * 10;  // Cube sizes between 5 and 15
+    const geometry = new THREE.BoxGeometry(size, size, size);  // Larger cube dimensions
+    const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff, opacity: 0.6, transparent: true });
+    const cube = new THREE.Mesh(geometry, material);
+    
+    const xPos = (Math.random() - 0.5) * 100;
+    const yPos = (Math.random() - 0.5) * 100;
+    const zPos = (Math.random() - 0.5) * 100;
+
+    cube.position.set(xPos, yPos, zPos);
+    cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+    cubes.push(cube);
+    scene.add(cube);
+}
+
+
+
+        camera.position.z = 50;
+
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        cubes.forEach(cube => {
+            cube.rotation.x += 0.005;
+            cube.rotation.y += 0.005;
+        });
+
+        renderer.render(scene, camera);
+    }
+
+    init();
+    animate();
+</script>
+
 </body>
 </html>
