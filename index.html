@@ -107,19 +107,23 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    const MAX_CUBE_SIZE = 7; // Maximum cube size
+    const MAX_POSITION = 40; // Maximum absolute position for x, y, and z
     for (let i = 0; i < 10; i++) {
-        const size = 5 + Math.random() * 10;
+        const size = Math.min(MAX_CUBE_SIZE, 5 + Math.random() * 10);
         const geometry = new THREE.BoxGeometry(size, size, size);
         const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff, opacity: 0.6, transparent: true });
         const cube = new THREE.Mesh(geometry, material);
 
         let xPos, yPos, zPos;
-        do {
-            xPos = (Math.random() - 0.5) * 100;
-            yPos = (Math.random() - 0.5) * 100;
-            zPos = (Math.random() - 0.5) * 100;
-        } while (isOverlapping(xPos, yPos, zPos, size));
-
+    do {
+        xPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
+        yPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
+        zPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
+    } while (isOverlapping(xPos, yPos, zPos, size) ||
+             Math.abs(xPos) + size > MAX_POSITION ||
+             Math.abs(yPos) + size > MAX_POSITION ||
+             Math.abs(zPos) + size > MAX_POSITION);
         cubePositions.push({ x: xPos, y: yPos, z: zPos });
         cubeSizes.push(size);
 
