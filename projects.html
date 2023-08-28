@@ -21,7 +21,7 @@
 		h1 {
 			color: #3a3a3a;
 			font-size: 2.5em;
-			font-weight: 700;
+			font-weight: 400;
 			margin-bottom: 1em;
 		}
 		p {
@@ -39,15 +39,14 @@
     border-radius: 3em;
     border: 2px solid #333;
     transition: all 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* added transform and box-shadow to the transition */
-    font-weight: 700;
-    text-decoration: underline;
+    font-weight: 400;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* initial box-shadow */
 }
 
 a:hover {
     background-color: #333;
     color: #e0f7fa;
-    transform: scale(1.5); /* enlarge the button slightly on hover */
+    transform: scale(1.15); /* enlarge the button slightly on hover */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* enhance box-shadow on hover */
 }
 
@@ -57,7 +56,7 @@ a.repo-link {
 }
 		.home-link {
 			color: #333;
-			font-weight: 700;
+			font-weight: 400;
 			margin-top: 2em;
 			font-size: 1.2em;
 		}
@@ -71,33 +70,67 @@ a.repo-link {
             left: 0;
             z-index: -1;
         }
+
+.back-home-button:hover {
+    background-color: #333;
+    color: #e0f7fa;
+    transform: scale(1.5); /* enlarge the button slightly */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* enhance box-shadow for a more pronounced raised effect */
+}
 	</style>
 </head>
 <body>
 	<h1>My Projects</h1>
 	<p>Visualization and Analysis of Government Health Contracts from 2016-2021</p>
-	<img src="geospatial.png" width = "450" height = "350">
-	<a href="https://github.com/arthurwu1227/effect-of-federal-contracts-on-health" class="repo-link">Repository Link </a>
+	<a href="https://github.com/arthurwu1227/effect-of-federal-contracts-on-health">
+    <img src="geospatial.png" width="450" height="350">
+</a>
+
 	<p>Automated Data Processor for FINRA Short Sale Volume Data</p>
-	<img src="FINRAshovol.png" width = "450" height = "200">
-	<a href="https://github.com/arthurwu1227/FINRA-shortsale-data" class="repo-link">Repository Link </a>
-	<a href="index.html" class="home-link">Back to homepage</a>
+	<a href="https://github.com/arthurwu1227/FINRA-shortsale-data">
+    <img src="FINRAshovol.png" width="450" height="200">
+</a>
+<a href="index.html" class="home-link back-home-button">Back to homepage</a>
+
     <script>
         let scene, camera, renderer;
 const toruses = [];
 
-function biasedRandomHorizontally() {
-    const r = Math.random();
-    if (r < 0.5) {
-        // Bias towards left side but ensure it's not on the extreme left
-        return (-0.5 - r * 0.3) * 50; // Between -25 to -40
-    } else {
-        // Bias towards right side but ensure it's not on the extreme right
-        return (0.5 + (r - 0.5) * 0.3) * 50; // Between 25 to 40
+    function getMinDistance(torus1, torus2) {
+    // Assuming that the width of the torus is represented by the "radius" parameter of the TorusGeometry
+    const radius1 = torus1.geometry.parameters.radius;
+    const radius2 = torus2.geometry.parameters.radius;
+
+    return (radius1 / 2) + (radius2 / 2);
+}
+    function doesOverlap(newTorus) {
+    for (let existingTorus of toruses) {
+        if (existingTorus === newTorus) continue; // skip checking against itself
+
+        const minDistance = getMinDistance(newTorus, existingTorus);
+        const actualDistance = existingTorus.position.distanceTo(newTorus.position);
+
+        if (actualDistance < minDistance) {
+            return true; // they overlap
+        }
     }
+    return false; // no overlaps found
 }
 
+
+    function biasedRandomHorizontally() {
+        const r = Math.random();
+        if (r < 0.5) {
+            return (-0.5 - r * 0.3) * 50;
+        } else {
+            return (0.5 + (r - 0.5) * 0.3) * 50;
+        }
+    }
+
 function init() {
+
+
+
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // Set alpha for transparent background
@@ -150,8 +183,8 @@ function onScroll() {
 function animate() {
     requestAnimationFrame(animate);
     toruses.forEach(torus => {
-        torus.rotation.x += 0.005;  // Default spinning speed
-        torus.rotation.y += 0.005;
+        torus.rotation.x += 0.01;  // Default spinning speed
+        torus.rotation.y += 0.01;
     });
     renderer.render(scene, camera);
 }

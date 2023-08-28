@@ -82,57 +82,78 @@ a:hover {
 </div>
 	<script>
     let scene, camera, renderer;
-    const cubes = [];
+const cubes = [];
+const cubeSizes = [];
+const cubePositions = [];
 
-    function init() {
-        scene = new THREE.Scene();
-        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // alpha for transparent background
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+function isOverlapping(x, y, z, size) {
+    for (let i = 0; i < cubePositions.length; i++) {
+        const dx = x - cubePositions[i].x;
+        const dy = y - cubePositions[i].y;
+        const dz = z - cubePositions[i].z;
 
-        for (let i = 0; i < 10; i++) {  // Generate fewer cubes, for example, 10
-    const size = 5 + Math.random() * 10;  // Cube sizes between 5 and 15
-    const geometry = new THREE.BoxGeometry(size, size, size);  // Larger cube dimensions
-    const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff, opacity: 0.6, transparent: true });
-    const cube = new THREE.Mesh(geometry, material);
-    
-    const xPos = (Math.random() - 0.5) * 100;
-    const yPos = (Math.random() - 0.5) * 100;
-    const zPos = (Math.random() - 0.5) * 100;
-
-    cube.position.set(xPos, yPos, zPos);
-    cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
-    cubes.push(cube);
-    scene.add(cube);
+        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        if (distance < size + cubeSizes[i]) {
+            return true;
+        }
+    }
+    return false;
 }
 
+function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
+    for (let i = 0; i < 10; i++) {
+        const size = 5 + Math.random() * 10;
+        const geometry = new THREE.BoxGeometry(size, size, size);
+        const material = new THREE.MeshBasicMaterial({ color: Math.random() * 0xffffff, opacity: 0.6, transparent: true });
+        const cube = new THREE.Mesh(geometry, material);
 
-        camera.position.z = 50;
+        let xPos, yPos, zPos;
+        do {
+            xPos = (Math.random() - 0.5) * 100;
+            yPos = (Math.random() - 0.5) * 100;
+            zPos = (Math.random() - 0.5) * 100;
+        } while (isOverlapping(xPos, yPos, zPos, size));
 
-        window.addEventListener('resize', onWindowResize, false);
+        cubePositions.push({ x: xPos, y: yPos, z: zPos });
+        cubeSizes.push(size);
+
+        cube.position.set(xPos, yPos, zPos);
+        cube.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+        cubes.push(cube);
+        scene.add(cube);
     }
 
-    function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    }
+    camera.position.z = 50;
 
-    function animate() {
-        requestAnimationFrame(animate);
+    window.addEventListener('resize', onWindowResize, false);
+}
 
-        cubes.forEach(cube => {
-            cube.rotation.x += 0.005;
-            cube.rotation.y += 0.005;
-        });
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-        renderer.render(scene, camera);
-    }
+function animate() {
+    requestAnimationFrame(animate);
 
-    init();
-    animate();
+    cubes.forEach(cube => {
+        cube.rotation.x += 0.005;
+        cube.rotation.y += 0.005;
+    });
+
+    renderer.render(scene, camera);
+}
+
+init();
+animate();
+
 </script>
 
 </body>
