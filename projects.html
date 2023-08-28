@@ -120,29 +120,15 @@ const toruses = [];
 
     return (radius1 / 2) + (radius2 / 2);
 }
-    function doesOverlap(newTorus) {
-    for (let existingTorus of toruses) {
-        if (existingTorus === newTorus) continue; // skip checking against itself
-
-        const minDistance = getMinDistance(newTorus, existingTorus);
-        const actualDistance = existingTorus.position.distanceTo(newTorus.position);
-
-        if (actualDistance < minDistance) {
-            return true; // they overlap
-        }
-    }
-    return false; // no overlaps found
-}
-
 
     function biasedRandomHorizontally() {
-        const r = Math.random();
-        if (r < 0.5) {
-            return (-0.5 - r * 0.3) * 50;
-        } else {
-            return (0.5 + (r - 0.5) * 0.3) * 50;
-        }
+    const r = Math.random();
+    if (r < 0.5) {
+        return (-1.0 - r * 0.5) * 50;
+    } else {
+        return (1.0 + (r - 0.5) * 0.5) * 50;
     }
+}
 
 function init() {
 
