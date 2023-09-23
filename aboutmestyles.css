@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 10%;
+    background-color: #e0f7fa;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+.title {
+    color: #3a3a3a;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+.subtitle{
+    color: #000;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700
+}
+.mission {
+    color: #333;
+    text-align: center;
+    margin: 20px;
+    font-size: 1em;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Above the default background, but below the content */
+}
+.content {
+    position: relative;
+    z-index: 2; /* Above the Three.js canvas */
+}
+
+@keyframes springIn{
+    0%{
+        transform: scale(0.5);
+        opacity: 0
+    }
+    60%{
+        transform: scale(0.75);
+        opacity: 0.6
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.popIn * {
+    animation: springIn 1s ease forwards;
+}
+
+@keyframes slideIn{
+    from {
+        transform: translateX(-100%);
+        opacity: 0
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1
+    }
+}
+
+.slider * {
+    opacity: 0;
+    animation: slideIn 1s forwards 0.5s;
+}
+
+.slider div:nth-child(1) {
+animation-delay: 1s; /* Start after 2 seconds */
+}
+
+.slider div:nth-child(2) {
+animation-delay: 1.5s; /* Start after 3 seconds */
+}
+
+.slider div:nth-child(3) {
+animation-delay: 2s; /* Start after 4 seconds */
+}
+
+.button {
+color: #333;
+font-size: 1.2em;
+text-decoration: none;
+margin: 1em;  /* Increased margin for separation */
+padding: 0.5em 1em;
+border-radius: 3em;
+border: 2px solid #333;
+transform: scale(1.2);
+transition: all 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  /* initial box-shadow for a raised button effect */
+display: inline-block;  /* Allows transform to work as expected */
+}
+
+.button:hover {
+    background-color: #333;
+    color: #e0f7fa;
+    transform: scale(1.2); /* enlarge the button slightly */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* enhance box-shadow for a more pronounced raised effect */
+}
+
+
+.info-container {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.info-container img {
+margin-left: 20px;
+opacity: 0;  /* Remove opacity from inline styles */
+animation: slideIn 1s forwards 2.5s; /* Remove from inline styles */
+}
+
