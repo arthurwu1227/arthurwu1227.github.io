@@ -3,19 +3,6 @@ const cubes = [];
 const cubeSizes = [];
 const cubePositions = [];
 
-function isOverlapping(x, y, z, size) {
-    for (let i = 0; i < cubePositions.length; i++) {
-        const dx = x - cubePositions[i].x;
-        const dy = y - cubePositions[i].y;
-        const dz = z - cubePositions[i].z;
-
-        const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-        if (distance < size + cubeSizes[i]) {
-            return true;
-        }
-    }
-    return false;
-}
 
 function init() {
     scene = new THREE.Scene();
@@ -35,11 +22,10 @@ function init() {
         let cube = new THREE.Mesh(geometry, material);
 
         let xPos, yPos, zPos;
-        do {
-            xPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
-            yPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
-            zPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
-        } while (isOverlapping(xPos, yPos, zPos, size)); // Make sure the cubes don't overlap
+        
+        xPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
+        yPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
+        zPos = (Math.random() - 0.5) * 2 * MAX_POSITION;
 
         cubePositions.push({ x: xPos, y: yPos, z: zPos });
         cubeSizes.push(size);
