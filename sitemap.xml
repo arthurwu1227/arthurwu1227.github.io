@@ -2,10 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+<<<<<<< HEAD
+    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/education/</loc>
+  </url><url>
+    <loc>http://localhost:1313/experience/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/hoorides/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/personalfinance/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+  </url><url>
+    <loc>http://localhost:1313/research/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/supportbot/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/install/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/traveling/</loc>
+=======
     <loc>https://example.org/categories/</loc>
   </url><url>
     <loc>https://example.org/</loc>
   </url><url>
     <loc>https://example.org/tags/</loc>
+>>>>>>> origin/main
   </url>
 </urlset>

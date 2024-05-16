@@ -1,0 +1,102 @@
+
+{
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": "About on Arthur Wu",
+    "description": "Recent content in About on Arthur Wu",
+    "home_page_url": "http://localhost:1313/",
+    "feed_url": "http://localhost:1313/index.json",
+    "language": "en-GB",
+    "icon": "http://localhost:1313/apple-touch-icon.png",
+    "favicon": "http://localhost:1313/apple-touch-icon.png",
+    "items": [
+        {
+            "title": "Education",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/education/",
+            "url": "http://localhost:1313/education/",
+            "content_html": "\u003ch4 id=\"ba-in-computer-science-the-university-of-virginia-graduating-may-2025\"\u003eB.A. in Computer Science, the University of Virginia (Graduating May 2025)\u003c/h4\u003e\n\u003cp\u003eMinor in Religious Studies (Concentration in Ethics and Philosophy)\u003cbr\u003e\nGPA: 3.92\u003c/p\u003e\n\u003ch4 id=\"advanced-studies-diploma-mclean-high-school\"\u003eAdvanced Studies Diploma, McLean High School\u003c/h4\u003e\n\u003cp\u003eACT Score: 35/36\u003cbr\u003e\nGPA: 4.35\u003c/p\u003e\n"
+        },
+        {
+            "title": "Experience",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/experience/",
+            "url": "http://localhost:1313/experience/",
+            "content_html": "\u003ch3 id=\"digital-platforms-intern-allianz-partners\"\u003eDigital Platforms Intern, Allianz Partners\u003c/h3\u003e\n\u003ch4 id=\"june-2024---august-2024\"\u003eJune 2024 - August 2024\u003c/h4\u003e\n\u003cp\u003ePython-based financial software development.\u003c/p\u003e\n\u003ch3 id=\"information-systems-research-intern-george-mason-university\"\u003eInformation Systems Research Intern, George Mason University\u003c/h3\u003e\n\u003ch4 id=\"june-2022---august-2022\"\u003eJune 2022 - August 2022\u003c/h4\u003e\n\u003cp\u003eDuring my summer as an Information Systems Intern at George Mason University through the ASSIP program, I built a predictive model that leveraged 100GB+ of public financial data which predicted health outcomes in 3000+ US counties. I improved the speed of data processing within my research team by over 50% by leveraging parallel execution through Python\u0026rsquo;s Dask library. I was listed as the first author on a research paper that was published in George Mason University\u0026rsquo;s student science journal.\u003c/p\u003e\n\u003ch3 id=\"programming-intern-george-washington-university\"\u003eProgramming Intern, George Washington University\u003c/h3\u003e\n\u003ch4 id=\"november-2021---may-2023\"\u003eNovember 2021 - May 2023\u003c/h4\u003e\n\u003cp\u003eI worked under two separate mentors during my time at George Washington University. Under graduate student Vitaliy Novik, I wrote browser automation scripts using BeautifulSoup and Selenium which collected 2000+ entries of online review data. I was later mentioned on a research paper that was presented to the Southern Economic Association 92nd annual conference. Under Dr. Jenny Zha Giedt of the GWU Department of Accounting, I developed a Python program which enabled economists to easily collect up to 2GB+ of FINRA short sale volume data, allowing GWU\u0026rsquo;s Department of Accounting to collect 650x more entries of historical short sale volume data.\u003c/p\u003e\n"
+        },
+        {
+            "title": "HooRides",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/projects/hoorides/",
+            "url": "http://localhost:1313/projects/hoorides/",
+            "authors": [
+                {
+                  "name": "React Native, Firebase"
+                }
+            ],
+            "content_html": "\u003cp\u003eHooRides is a carpooling app that was developed with the University of Virginia community in mind. Built with React Native and Firebase, HooRides is a cross-platform application that facilitates rides for UVA students and faculty to and from Charlottesville. So far, 1000+ km of rides have been scheduled using HooRides.\u003c/p\u003e\n"
+        },
+        {
+            "title": "Personal Finance",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/blog/personalfinance/",
+            "url": "http://localhost:1313/blog/personalfinance/",
+            "authors": [
+                {
+                  "name": "Arthur Wu"
+                }
+            ],
+            "content_html": "\u003cp\u003esample text\u003c/p\u003e\n"
+        },
+        {
+            "title": "Research",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/research/",
+            "url": "http://localhost:1313/research/",
+            "content_html": "\u003ch4 id=\"the-role-of-learning-in-returns-to-college-major-evidence-from-28-million-reviews-of-150000-professorshttpspapersssrncomsol3paperscfmabstract_id4275668\"\u003e\u003ca href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4275668\"\u003eThe Role of Learning in Returns to College Major: Evidence from 2.8 Million Reviews of 150,000 Professors\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eI was a research assistant for this project. I executed BeautifulSoup and Selenium scripts to assist in data collection needs, collecting megabytes of unit-level review data. A final research paper was presented by my research mentor at the Southern Economic Association 2022 Annual Conference.\u003c/p\u003e\n\u003ch4 id=\"drawing-insights-on-large-health-contract-datasets-using-statistical-learning-and-parallel-computinghttpsjournalsgmueduindexphpjssrarticleview3399\"\u003e\u003ca href=\"https://journals.gmu.edu/index.php/jssr/article/view/3399\"\u003eDrawing Insights on Large Health Contract Datasets Using Statistical Learning and Parallel Computing\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eDuring my internship at George Mason University, I applied parallel computing with Python\u0026rsquo;s Dask library to analyze large government contract datasets. I used multivariate panel regression to explore the impact of government health contracts on public health outcomes. My contributions were recognized in a co-authored paper published in the university\u0026rsquo;s undergraduate science journal.\u003c/p\u003e\n"
+        },
+        {
+            "title": "SupportBot",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/projects/supportbot/",
+            "url": "http://localhost:1313/projects/supportbot/",
+            "authors": [
+                {
+                  "name": "React, MaterialUI"
+                }
+            ],
+            "content_html": "\u003cp\u003eI spearheaded the development of a customer support chatbot for Babylon Micro-Farms with React.js and the OpenAI Assistants API. I led a team of 4 software engineers using Agile project management methodology, achieving project competion ahead of schedule and delivering a polished web application to Babylon Micro-Farms which improved the efficiency of their account management and customer support teams. Later, I presented the chatbot application to the Babylon Micro-Farms CTO and Head of Data Science, fostering a continued shift in their customer support strategy.\u003c/p\u003e\n"
+        },
+        {
+            "title": "theCourseForum",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/projects/install/",
+            "url": "http://localhost:1313/projects/install/",
+            "authors": [
+                {
+                  "name": "Django, MySQL"
+                }
+            ],
+            "content_html": "\u003cp\u003eI\u0026rsquo;m part of a team of 20+ engineers at a University of Virginia-funded nonprofit which develops an academic planning web application called theCourseForum. I helped revamp the user authentication page by implementing responsive authentication to expedite login, benefitting 41,000+ users with significant time savings. I also worked with CI tools such as GitHub Actions to ensure successful application deployment for over 41,000 users alongside an actively growing codebase.\u003c/p\u003e\n"
+        },
+        {
+            "title": "Traveling to Japan",
+            "date_published": "0001-01-01T00:00:00Z",
+            "date_modified": "0001-01-01T00:00:00Z",
+            "id": "http://localhost:1313/blog/traveling/",
+            "url": "http://localhost:1313/blog/traveling/",
+            "authors": [
+                {
+                  "name": "Arthur Wu"
+                }
+            ],
+            "content_html": "\u003cp\u003esample text\u003c/p\u003e\n"
+        }
+        ]
+}
