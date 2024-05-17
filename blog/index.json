@@ -3,18 +3,18 @@
     "version": "https://jsonfeed.org/version/1.1",
     "title": "Blog on Arthur Wu",
     "description": "Recent content in Blog on Arthur Wu",
-    "home_page_url": "https://example.org/",
-    "feed_url": "https://example.org/blog/index.json",
+    "home_page_url": "http://localhost:1313/",
+    "feed_url": "http://localhost:1313/blog/index.json",
     "language": "en-GB",
-    "icon": "https://example.org/apple-touch-icon.png",
-    "favicon": "https://example.org/apple-touch-icon.png",
+    "icon": "http://localhost:1313/apple-touch-icon.png",
+    "favicon": "http://localhost:1313/apple-touch-icon.png",
     "items": [
         {
             "title": "Personal Finance",
             "date_published": "0001-01-01T00:00:00Z",
             "date_modified": "0001-01-01T00:00:00Z",
-            "id": "https://example.org/blog/personalfinance/",
-            "url": "https://example.org/blog/personalfinance/",
+            "id": "http://localhost:1313/blog/personalfinance/",
+            "url": "http://localhost:1313/blog/personalfinance/",
             "authors": [
                 {
                   "name": "Arthur Wu"
@@ -26,8 +26,8 @@
             "title": "Traveling to Japan",
             "date_published": "0001-01-01T00:00:00Z",
             "date_modified": "0001-01-01T00:00:00Z",
-            "id": "https://example.org/blog/traveling/",
-            "url": "https://example.org/blog/traveling/",
+            "id": "http://localhost:1313/blog/traveling/",
+            "url": "http://localhost:1313/blog/traveling/",
             "authors": [
                 {
                   "name": "Arthur Wu"

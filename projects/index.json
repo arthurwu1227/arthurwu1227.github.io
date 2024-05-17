@@ -3,18 +3,18 @@
     "version": "https://jsonfeed.org/version/1.1",
     "title": "Projects on Arthur Wu",
     "description": "Recent content in Projects on Arthur Wu",
-    "home_page_url": "https://example.org/",
-    "feed_url": "https://example.org/projects/index.json",
+    "home_page_url": "http://localhost:1313/",
+    "feed_url": "http://localhost:1313/projects/index.json",
     "language": "en-GB",
-    "icon": "https://example.org/apple-touch-icon.png",
-    "favicon": "https://example.org/apple-touch-icon.png",
+    "icon": "http://localhost:1313/apple-touch-icon.png",
+    "favicon": "http://localhost:1313/apple-touch-icon.png",
     "items": [
         {
             "title": "HooRides",
             "date_published": "0001-01-01T00:00:00Z",
             "date_modified": "0001-01-01T00:00:00Z",
-            "id": "https://example.org/projects/hoorides/",
-            "url": "https://example.org/projects/hoorides/",
+            "id": "http://localhost:1313/projects/hoorides/",
+            "url": "http://localhost:1313/projects/hoorides/",
             "authors": [
                 {
                   "name": "React Native, Firebase"
@@ -26,8 +26,8 @@
             "title": "SupportBot",
             "date_published": "0001-01-01T00:00:00Z",
             "date_modified": "0001-01-01T00:00:00Z",
-            "id": "https://example.org/projects/supportbot/",
-            "url": "https://example.org/projects/supportbot/",
+            "id": "http://localhost:1313/projects/supportbot/",
+            "url": "http://localhost:1313/projects/supportbot/",
             "authors": [
                 {
                   "name": "React, MaterialUI"
@@ -39,8 +39,8 @@
             "title": "theCourseForum",
             "date_published": "0001-01-01T00:00:00Z",
             "date_modified": "0001-01-01T00:00:00Z",
-            "id": "https://example.org/projects/install/",
-            "url": "https://example.org/projects/install/",
+            "id": "http://localhost:1313/projects/install/",
+            "url": "http://localhost:1313/projects/install/",
             "authors": [
                 {
                   "name": "Django, MySQL"

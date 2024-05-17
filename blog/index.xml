@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Arthur Wu</title>
-    <link>https://example.org/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in Blog on Arthur Wu</description>
     <generator>Hugo</generator>
     <language>en-GB</language>
-      <atom:link href="https://example.org/blog/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Personal Finance</title>
-      <link>https://example.org/blog/personalfinance/</link>
+      <link>http://localhost:1313/blog/personalfinance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/blog/personalfinance/</guid>
+      <guid>http://localhost:1313/blog/personalfinance/</guid>
       <description>&lt;p&gt;sample text&lt;/p&gt;&#xA;</description>
     </item>
     <item>
       <title>Traveling to Japan</title>
-      <link>https://example.org/blog/traveling/</link>
+      <link>http://localhost:1313/blog/traveling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/blog/traveling/</guid>
+      <guid>http://localhost:1313/blog/traveling/</guid>
       <description>&lt;p&gt;sample text&lt;/p&gt;&#xA;</description>
     </item>
   </channel>

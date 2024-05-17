@@ -2,30 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/</loc>
+    <loc>http://localhost:1313/</loc>
   </url><url>
-    <loc>https://example.org/blog/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>http://localhost:1313/education/</loc>
   </url><url>
-    <loc>https://example.org/education/</loc>
+    <loc>http://localhost:1313/experience/</loc>
   </url><url>
-    <loc>https://example.org/experience/</loc>
+    <loc>http://localhost:1313/projects/hoorides/</loc>
   </url><url>
-    <loc>https://example.org/projects/hoorides/</loc>
+    <loc>http://localhost:1313/projects/</loc>
   </url><url>
-    <loc>https://example.org/blog/personalfinance/</loc>
+    <loc>http://localhost:1313/research/</loc>
   </url><url>
-    <loc>https://example.org/projects/</loc>
+    <loc>http://localhost:1313/projects/supportbot/</loc>
   </url><url>
-    <loc>https://example.org/research/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url><url>
-    <loc>https://example.org/projects/supportbot/</loc>
-  </url><url>
-    <loc>https://example.org/tags/</loc>
-  </url><url>
-    <loc>https://example.org/projects/install/</loc>
-  </url><url>
-    <loc>https://example.org/blog/traveling/</loc>
+    <loc>http://localhost:1313/projects/install/</loc>
   </url>
 </urlset>
